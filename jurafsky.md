@@ -87,7 +87,77 @@ Regexpal = JavaScript tool for regular expression
   [ ^ A-x] - Carat means negation only when inside []
 * Pipe | = means [A | B], either A or B
 * Optional Previous Chars: [colou?r]
-* 0 or more previous chars: [oo*h!] = {oh!, ooh!, ooooh!}
-* 1 or more previous chars: [o+h!] =  {oh!, ooh!, ooooh!}
+* Kleene Operators (* and +) - Stephen C Kleene
+  * 0 or more previous chars: [oo*h!] = {oh!, ooh!, ooooh!}
+  * 1 or more previous chars: [o+h!] =  {oh!, ooh!, ooooh!}
+
 * [beg.n] = {begin, begun, began}
+* Anchors (^ and $)
+  * ^[A-Z] = matches the 1st instance of capital letter found
+  * [A-Z]$ = matches the last instance of capital letter found
+
+* Period = `\.` (backslash + ''."), since period matches everything
+* Goal: Find all `the's `
+  * `[^A-Za-z][Tt]he [^A-Za-z]`
+
+* Errors:
+  * Type I Errors (False Positives): Matching strings that shouldn't have been matched 
+    (ex: "there" matched when "the")
+  * Type II Errors (False Negatives): Matching strings that should have been matched but weren't 
+    (ex: "The") 
+
+* Increasing the Accuracy and Precision $\rightarrow$ Minimizes False Positives
+* Increasing the Coverage or Recall $\rightarrow$ Minimizes False Negatives
+
+
+
+<h4>Lecture 3 - Regular Expressions in Practical NLP</h4>
+
+Stanford English Tokenizer - deterministic, fast-high quality tokenizer
+
+* Abbreviations:
+  * ABMON = Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec
+  * ABDAY = Mon | Tue | Wed | Thu | Fri | Sat | Sun
+
+
+
+<h4>Lecture 4 - Word Tokenization</h4>
+
+Every NLP Task needs to be able to do text normalization:
+
+1. Segmenting/Tokenizing Words into runnings text
+2. Normalize Word Formats
+3. Segmenting sentences in running text
+
+**Lemma**: same stem, part of speech, rough word sense, belongs to the same root (ex: cat, cats)
+
+**Wordform**: the full inflected surface form (cat and cats are different wordforms)
+
+Ex:  ``they lay back in the San Francisco grass and looked and the stars and their``
+
+* **Type**: an element in the vocabulary. 
+  * $V = \text{vocabulary} = \text{set of types}$ 
+  * $|V| \text{ is the size of the vocabulary}$
+* **Token**: an instance of that type in running text.     
+  * $N = \text{number of tokens}$
+
+In example, there are 15 tokens and 13 types (words: and, the repeat).
+
+UNIX Text Processing, Given shakes.txt file of Shakespeare's work
+
+`tr 'A-Z' 'a-z'< shakes.txt | tr -sc 'A-Za-z' '\n' < shakes.txt | sort | uniq -c | sort -n -r | less` $\rightarrow$  Treats lowercase and uppercase the same, replaces all spaces with new line, sorts the words, finds unique words, and sorts then with order of most frequently appearing
+
+ Issues with Tokenization:
+
+* Finland's => Finland, Finlands, Finland's
+* what're => what are
+* State-of-the-art => state of the art
+* lowercase => lower-case, lowercase, lower case
+* PhD. => PhD ,PhD. Dr.
+
+
+
+Case Folding:
+
+* There's a difference between U.S. and us
 
