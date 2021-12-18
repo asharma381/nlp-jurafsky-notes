@@ -20,7 +20,7 @@ Applications:
 | Parts-of-speech tagging   | Coreference Resolution   | Paraphrase              |
 | Named entitry recognition | Word sense disambiguirty | Summarization & Dialog  |
 
-![lecture1](/Users/aditya/Documents/nlp-notes/images/lecture1.png)
+![lecture1](https://github.com/asharma381/nlp-jurafsky-notes/blob/master/images/lecture1.png)
 
 
 
@@ -221,7 +221,7 @@ Minimum Edit Distance: minimum number of editing operations
 * Deletion
 * Substitution
 
-<img src="/Users/aditya/Documents/nlp-notes/images/lecture7.png" alt="lecture1" style="zoom: 50%;" />
+<img src="https://github.com/asharma381/nlp-jurafsky-notes/blob/master/images/lecture7.png" alt="lecture1" style="zoom: 50%;" />
 
 Each Operation has a cost of 1 (Distance between them is 5)
 
