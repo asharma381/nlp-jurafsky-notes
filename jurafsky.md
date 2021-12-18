@@ -249,7 +249,7 @@ Define Min Edit Distance:
 
 Dynamic Programming: A tabular method of computation for $D(n,m)$. Solving problems by combining solutions to subproblems
 
-Bottom-up: Compute $D(i,j)$ for small $i,j$. Compute larger $D(i,j)$ based on prevoiusly computed smaller values
+Bottom-up: Compute $`D(i,j)`$ for small $i,j$. Compute larger $D(i,j)$ based on prevoiusly computed smaller values
 
 
 
