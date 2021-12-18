@@ -155,9 +155,102 @@ UNIX Text Processing, Given shakes.txt file of Shakespeare's work
 * lowercase => lower-case, lowercase, lower case
 * PhD. => PhD ,PhD. Dr.
 
+<h4>Lecture 5 - Word Normalization and Stemming</h4>
 
+Need to "normalize" terms: Information Retrieval $\rightarrow$ indexed terms and query terms must have same form
 
 Case Folding:
 
 * There's a difference between U.S. and us
+* Reduce all letters to lower case, exceptions: Fed vs fed, SAIL vs. sail
 
+Lemmatization: reduce inflection or variant forms to base form: am, are, is $\rightarrow$ be
+
+* Machine Translation (Spanish): Quiero (I want), Quieres (you want), same lemma as **querer** 'want'
+
+Morphology: morphemes
+
+* The small meanigful units that make up words
+
+* Stems: The core meaning-bearning units
+
+  * Task: Reduce terms to their stems in information retrieval
+
+  * Automat(a), Automatic, Automation all reduced to **automat**
+
+  * Porter's Algorithms: The most common English stemmer:
+
+    * ies $\rightarrow$ i
+    * (v)ing $\rightarrow \empty$ walking to walk 
+
+    * `tr -sc 'A-Za-z' '\n' < shakes.txt | tr 'A-Z' 'a-z' | grep 'ing$' | sort | uniq -c | sort -n -r | less` words ending in 'ing' in Shakespeare.
+    * For example: {nothing, something, king, sing} shouldn't be remove
+
+* Affixes: Bits and Pieces that adhere to stems
+
+  * Often with grammatical functions
+
+<h4>Lecture 6 - Sentence Segmentation and Decision Trees</h4>
+
+* ! and ? are relatives unambiguous
+* Period '.' is quite ambiguous sentence boundary
+  * Ex: Inc. or Dr. or 2.3
+  * To solve this problem: Build a binary classifier
+    * Looks at '.' to decide of EndOfSentence/notEndOfSentence
+    * Classifiers: hand-written rules, regular expressions, machine-learning
+* Decision Trees: Is an if-then-else statement
+  * Choosing Features is important part
+  * Setting up the structure is too hard to do by hand (numeric features, pick threshold)
+  * Features can be exploited by any kind of classifier: {Logisitic Regression, SVM, Neural Nets}
+* Look at the words before or after a period
+* Length of the word, probability that ends a sentence or starts a sentence. (ex: `. The` is start of sentence)
+
+<h4>Lecture 7 - Minimum Edit Distance</h4>
+
+String Similarity
+
+* Spell Correction: `graffe`
+* Computational Biology (Assign two sequences of nucleotides)
+* Machine Translation, Information Extraction, Speech Recognition
+
+
+
+Minimum Edit Distance: minimum number of editing operations
+
+* Insertion
+* Deletion
+* Substitution
+
+<img src="/Users/aditya/Documents/nlp-notes/images/lecture7.png" alt="lecture1" style="zoom: 50%;" />
+
+Each Operation has a cost of 1 (Distance between them is 5)
+
+Levenshtein Distance (cost for substitution is 2) Total Cost = 8
+
+
+
+Evaluating Machine Translation - how well a machine translation system does
+
+* Measure the words inserted, deleted, and substtitioed by comparing two sentences.
+
+Named Entitity Extraction: improve accuracy
+
+* Stanford President .... vs Stanford University President = are the same, we can use same approach
+* IBM vs IBM Inc.
+  
+
+Define Min Edit Distance:
+
+* Given two strings $X$ of length $n$ and $Y$ of length $m$. Define $D(i,j)$ as distance matrix 
+
+
+
+
+
+Dynamic Programming: A tabular method of computation for $D(n,m)$. Solving problems by combining solutions to subproblems
+
+Bottom-up: Compute $D(i,j)$ for small $i,j$. Compute larger $D(i,j)$ based on prevoiusly computed smaller values
+
+
+
+Formal Levenshtien Distance Calculation
