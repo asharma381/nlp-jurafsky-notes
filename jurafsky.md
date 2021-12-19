@@ -245,7 +245,7 @@ Define Min Edit Distance:
 
 
 
-
+<h4>Lecture 8 - Computing Minimum Edit Distance</h4>
 
 Dynamic Programming: A tabular method of computation for $D(n,m)$. Solving problems by combining solutions to subproblems
 
@@ -253,4 +253,102 @@ Bottom-up: Compute $$D(i,j)$$ for small $i,j$. Compute larger $D(i,j)$ based on 
 
 
 
-Formal Levenshtien Distance Calculation
+Formal Levenshtien Distance Calculation:
+
+* Initialization
+  $D(i,0) = i$
+  $D(j,0) = j$
+
+*  Recurrence Relation
+
+  $D(i,j) = min \begin{cases} D(i-1,j) + 1 \\ D(i,j-1) + 1 \\ D(i-1,j-1) + \begin{cases} 2; \text{ if } X(i) \neq Y(j) \\ 0; \text{ if } X(i) = Y(j) \end{cases}\end{cases}$
+
+* Termination: $D(N,M)$ is distance
+
+
+
+Levenshtien Distance Dynamic Programming Table
+
+|       | #     | E     | X     | E     | C     | U     | T     | I     | O     | N     |
+| ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| **#** | **0** | 1     | 2     | 3     | 4     | 5     | 6     | 7     | 8     | 9     |
+| **I** | **1** | 2     | 3     | 4     | 5     | 6     | 7     | 6     | 7     | 8     |
+| **N** | 2     | **3** | 4     | 5     | 6     | 7     | 8     | 7     | 8     | 7     |
+| **T** | 3     | 4     | **5** | 6     | 7     | 8     | 7     | 8     | 9     | 8     |
+| **E** | 4     | 3     | 4     | **5** | **6** | 7     | 8     | 9     | 10    | 9     |
+| **N** | 5     | 4     | 5     | 6     | 7     | **8** | 9     | 10    | 11    | 10    |
+| **T** | 6     | 5     | 6     | 7     | 8     | 9     | **8** | 9     | 10    | 11    |
+| **I** | 7     | 6     | 7     | 8     | 9     | 10    | 9     | **8** | 9     | 10    |
+| **O** | 8     | 7     | 8     | 9     | 10    | 11    | 10    | 9     | **8** | 9     |
+| **N** | 9     | 8     | 9     | 10    | 12    | 12    | 11    | 10    | 9     | **8** |
+
+
+
+<h4>Lecture 9 - Backtrace for Computing Alignments</h4>
+
+Need to **align** each character of the two strings to each other
+
+Backtrace - every time we enter a cell, remember where we came from, then trace back the path
+
+$D(i,j)$ = {insertion (left), deletion (right), substitution (diagonal)} in the Distance Matrix
+
+Time Performance $\mathbb{O}(nm)$, Space $\mathbb{O}(nm)$, Backtrace $\mathbb{O}(n+m)$
+
+<h4>Lecture 10 - Weighted Minimum Edit Distance</h4>
+
+Add weights to the computation:
+
+* Spell Correction: some letters are more likely to be mistyped than others (vowels more confused)
+* Biology: certain kinds of insertion and deletion are more likely to occur
+
+Confusion Matrix can see which two letters are more likely to be missed (ex: a and e, keyboard distance)
+
+Change Formula: Add the cost for adding and deleting for each character
+
+<h4>Lecture 11 - Minimum Edit Distance for Computational Biology</h4>
+
+* Comparing genes or regions from different species, assembling fragments of DNA
+* In NLP, we can talk about distance (minimized) and weights
+
+Needleman-Wunsch Algorithm: Positive Cost for matching, negative cost for deletions
+
+
+
+<h4>Lecture 12 - Introduction to n-grams</h4>
+
+Probabilistic Language Modeling: assign a probability to a sentence
+
+* Machine Translation: P(**high** winds tonite) > P(**large** winds tonite)
+* Spell Correction: P(about fifteen **minutes**) > P(about fifteen **minuets**)
+* Speech Reconition: P(I saw a van) >> P(eyes awe of an)
+* Summarization, Question Answering
+
+Given a sequence of words $P(W) = P(w_1, w_2, w_3, \ldots, w_n)$
+
+Find the probability of word $P(w_5 | w_1, w_2, w_3, w_4)$
+
+**Language Model (LM)**: a model that computes the probability of $P(W)$ or $P(w_2 | w_1)$. 
+
+Chain rule of probability: Conditional Probability $P(A|B) =  P(A \cap B)/ P(B)$ 
+
+Simplest Model: Unigram model (predicts just based on 1 both)
+
+Bigram: find the probability based on the previous word
+
+Extend onto trigrams, 4-grams, n-grams (language has long-distance dependencies)
+
+<h4>Lecture 13 - Estimating n-gram probabilites</h4>
+
+Bigrams Example from Resurant Food
+
+$P(want | spend) = 0$ 	Here, $P = 0$ is caused by a grammatical error. {spend want} is incorrect
+
+$P(food | to) = 0$ 			Here, $P = 0$ is caused by a contingent error. {to food} never present in data
+
+
+
+Practically, we do everything in log space (arithmetic underflow, faster to add)
+
+$p_1 * p_2 * p_3 * p_4 = \log p_1 + \log p_2 + \log p_3 + \log p_4$
+
+ Google n-gram Corpus - 1 trillion words, 1 five-word sequence, 13 million unique words
