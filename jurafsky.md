@@ -352,3 +352,29 @@ Practically, we do everything in log space (arithmetic underflow, faster to add)
 $p_1 * p_2 * p_3 * p_4 = \log p_1 + \log p_2 + \log p_3 + \log p_4$
 
  Google n-gram Corpus - 1 trillion words, 1 five-word sequence, 13 million unique words
+
+## Lecture 14 - Evaluation and Perplexity
+
+* Train parameters of our language model on a **training set**
+* Test the model's performance on data we haven't seen before
+  * **Test Set**: unseen dataset that is different from our training set, totally unused.
+  * **Evaluation Metric** tells us how well our model does on the test set
+* Extrinsic Evaluation: Put 2 models in a task, run the task and get an accuracy. Compare the two
+  * Difficulties: Time consuming, 
+* Intrinsic Evaluation: Perplexity
+  * Bad Approximation: Unless test data and training data are similar, only useful in pilot experiments
+
+The Shannon Game: Intiuitiion of Perplexity
+
+* How can we predict the next word
+* Unigrams are terrible at this - only have 1 word to refer to 
+* The best language model is one that best predicts an unseen test set
+* **Perplexity**: probability of the test set, normalized by the number of words
+  * Minimizing perplexity is the same as maximizing probability, Lower perplexity = better model
+  * $PP(W) = P(w_1w_2\ldots w_n)^{-1/N}$
+
+| N-gram Order | Unigram | Bigram | Trigram |
+| ------------ | ------- | ------ | ------- |
+| Perplexity   | 962     | 170    | 109     |
+
+Training 38 million words, test 1.5 million words, on WSJ
