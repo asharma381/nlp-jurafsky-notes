@@ -378,3 +378,14 @@ The Shannon Game: Intiuitiion of Perplexity
 | Perplexity   | 962     | 170    | 109     |
 
 Training 38 million words, test 1.5 million words, on WSJ
+
+## Lecture 15 - Generalization and Zeros
+
+* Shannon Visualization Method
+  * Choose a random bigram according to its probability $P(<s>,w)$, string together 
+* Approximate Shakespeare using unigrams, bigrams, trigrams,  quadgrams.
+* The perils of overfitting: n-grams only work well if the test corpus looks like the training corpus
+  * In real life this doesn’t often occur, need to generalize 
+
+* One kind of generalization **Zeros** 
+  * Bigrams with 0 probability, means thar we will assign 0 probability to the test set!
