@@ -389,3 +389,5 @@ Training 38 million words, test 1.5 million words, on WSJ
 
 * One kind of generalization **Zeros** 
   * Bigrams with 0 probability, means thar we will assign 0 probability to the test set!
+
+## Lecture 16 - Smoothing Add One
