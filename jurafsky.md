@@ -391,3 +391,17 @@ Training 38 million words, test 1.5 million words, on WSJ
   * Bigrams with 0 probability, means thar we will assign 0 probability to the test set!
 
 ## Lecture 16 - Smoothing Add One
+
+* Intuition of Smoothing: steal probability mass distribution to generalize better
+* **Add-one Estimation** (Laplace Smoothing): pretend we saw each word one more time than we did
+  * Just add one to all the counts
+  * MLE Estimate: $P_{MLE}(w_i | w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}$
+  *  Add-one Estimate: $P_{Add-1} = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}$
+* Maximum Likelihood Estimate
+  * of some parameter of a model $M$ from a training set $T$
+  * maximizes the likelihood of the training set $T$ given the model $M$
+* Suppose the word "bagel" appears 400 times in a million size corpus. MLE estimation = 400/1,000,000
+* Example: Laplacian smoothed bigram counts (add-one to all the examples with 0 count)
+  * Laplace-smoothed bigrams reassesses the probability and reconstituted counts
+* Add-one estimation is a very blunt instrument: oftentimes isn't used for N-grams
+* However, it is used for other NLP models such as text classification or in domains where the number of 0's isn't huge
