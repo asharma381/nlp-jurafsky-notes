@@ -401,7 +401,52 @@ Training 38 million words, test 1.5 million words, on WSJ
   * of some parameter of a model $M$ from a training set $T$
   * maximizes the likelihood of the training set $T$ given the model $M$
 * Suppose the word "bagel" appears 400 times in a million size corpus. MLE estimation = 400/1,000,000
-* Example: Laplacian smoothed bigram counts (add-one to all the examples with 0 count)
-  * Laplace-smoothed bigrams reassesses the probability and reconstituted counts
+* Example: Laplacian smoothed bi-gram counts (add-one to all the examples with 0 count)
+  * Laplace-smoothed bi-grams reassesses the probability and reconstituted counts
 * Add-one estimation is a very blunt instrument: oftentimes isn't used for N-grams
 * However, it is used for other NLP models such as text classification or in domains where the number of 0's isn't huge
+
+## Lecture 17 - Interpolation
+
+* Sometimes it helps to use _less_ context
+* **Backoff**: Use tri-grams if you have good evidence, otherwise bi-grams, then uni-grams
+* **Interpolation**: Mix uni-grams, bi-grams, tri-grams
+* In practice, interpolation works better.
+
+**Linear Interpolation**: 
+$\hat P(w_n | w_{n-1} w_{n-2}) = \lambda_1 P(w_n | w_{n-1} w_{n-2}) + \lambda_2 P(w_n | w_{n-1}) + \lambda_3P(w_n)$, where $\sum_i \lambda_i = 1$
+* Lambdas Conditional on context can also be used
+* Choose $\lambda$'s to maximize the probability of held-out data:
+  * Use a held-out corpus {Training Data, Held-out Data, Test Data}
+  * Fix the n-grams probabilities (on the training data)
+  * Search for $\lambda$s that give largest probability to held-out set
+* If we know all the words in advance: 
+  * Vocabulary $V$ is fixed (closed vocabulary task)
+* However, oftentimes:
+  * Out of Vocabulary = OOV words (open vocabulary task)
+  * Create an unknown word token `<UKN>`
+  * Training of `<UKN>` probabilities
+    * Create a fixed lexicon $L$ of size $V$
+    * At text normalization phase, any training word not in $L$ changed at `<UKN>`
+    * Now we train its probabilities like a training word
+  * At decoding time
+    * If text input: Use UKN probabilities for any word not in training
+* Huge web-scale n-grams (Google N-gram corpus)
+  * Pruning: Only store N-grams with count > threshold
+  * Remove singletons of higher-order n-grams
+* Efficiency
+  * Efficient data structures like tries
+  * Bloom Filters: approximate language models
+  * Store words as indexes, not string
+    * Use Huffman coding to fit large numbers instead of words into two bytes
+  * Quantize probabilities (4-8 bits instead of 8-byte float)
+* Smoothing for N-grams
+  * Add-one smoothing (not for language modeling)
+  * Commonly used method (extended interpolated Kneser-Ney)
+  * large N-grams like Web: Stupid Backoff
+* Discriminative models:
+  * Choose n-gram weights to improve a task, not to fit the training set
+* Parsing-based models
+* Caching Models:
+  * Recently used words are more likely to appear
+  * Perform very poorly for speech recognition
