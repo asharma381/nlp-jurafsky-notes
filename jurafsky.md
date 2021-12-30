@@ -450,3 +450,17 @@ $\hat P(w_n | w_{n-1} w_{n-2}) = \lambda_1 P(w_n | w_{n-1} w_{n-2}) + \lambda_2 
 * Caching Models:
   * Recently used words are more likely to appear
   * Perform very poorly for speech recognition
+
+## Lecture 18 - Good Turing Smoothing
+
+* Advanced smoothing algorithms
+  * Good-Turing
+  * Kneser-Ney
+  * Witten-Bell
+  * Use the count of things they've seen **once** to help estimate the counts they have **never** seen
+* Notation: $N_c = $ frequency of frequency $c$
+  * $N_c$ is the count of things we've seen $c$ times
+  * Ex: `Sam I am I am Sam I do not eat`
+  * `I = 3, Sam = 2, am = 2, do = 1, not = 1, eat = 1`
+  * $N_1 = 3, N_2 = 2, N_3 = 1$
+* $P^*_{GT}$(things with zero frequency) = $\frac{N_1}{N}$, $c^* = \frac{(c+1)N_{c+1}}{N_c}$
