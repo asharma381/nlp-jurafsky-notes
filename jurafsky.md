@@ -464,3 +464,5 @@ $\hat P(w_n | w_{n-1} w_{n-2}) = \lambda_1 P(w_n | w_{n-1} w_{n-2}) + \lambda_2 
   * `I = 3, Sam = 2, am = 2, do = 1, not = 1, eat = 1`
   * $N_1 = 3, N_2 = 2, N_3 = 1$
 * $P^*_{GT}$(things with zero frequency) = $\frac{N_1}{N}$, $c^* = \frac{(c+1)N_{c+1}}{N_c}$
+
+## Lecture 19 -  Kneser Ney Smoothing 
