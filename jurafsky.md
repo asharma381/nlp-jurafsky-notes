@@ -466,3 +466,11 @@ $\hat P(w_n | w_{n-1} w_{n-2}) = \lambda_1 P(w_n | w_{n-1} w_{n-2}) + \lambda_2 
 * $P^*_{GT}$(things with zero frequency) = $\frac{N_1}{N}$, $c^* = \frac{(c+1)N_{c+1}}{N_c}$
 
 ## Lecture 19 -  Kneser Ney Smoothing 
+* Better estimate of the probabilities of lower-order uni-grams
+* $P_\text{continuation}(w)$ - for each word, count the number of bi-gram types it completes
+  * Every bi-gram was a novel continuation
+  * Normalized by the total number of word bi-gram types
+
+$P_{KN} (w_i | w_{i-1})$ = $\frac{\text{max}(c(w_{i-1}, w_i) - d, 0)}{c(w_{i-1})} + \lambda(w_{i-1}) P_\text{continuation}(w_i)$
+* $\lambda$ is a normalizing constant; the probability mass we've discounted
+$\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
