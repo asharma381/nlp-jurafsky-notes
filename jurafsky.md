@@ -474,3 +474,19 @@ $\hat P(w_n | w_{n-1} w_{n-2}) = \lambda_1 P(w_n | w_{n-1} w_{n-2}) + \lambda_2 
 $P_{KN} (w_i | w_{i-1})$ = $\frac{\text{max}(c(w_{i-1}, w_i) - d, 0)}{c(w_{i-1})} + \lambda(w_{i-1}) P_\text{continuation}(w_i)$
 * $\lambda$ is a normalizing constant; the probability mass we've discounted
 $\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
+
+## Lecture 20 -  Spell Correction Task
+
+* Applications: Word Processing (suggestions), Web Search, Phones (Messages)
+* Spell Tasks: Spell Error Detection
+  * Spell Error Correction: Autocorrect, Suggest a correction, Suggestion lists
+* Types of spelling errors
+  * Non-word Errors (graffe $\rightarrow$ giraffe)
+  * Real word Errors
+    * Typographical Errors (three $\rightarrow$ there)
+    * Cognitive Errors (homophones): (piece $\rightarrow$ peace, too $\rightarrow$ two)
+* Non-word Spelling Error Detection: Any word not in a **dictionary** is an error, the larger the dictionary the better
+* Non-word Spelling Correction: 
+  * Generate candidates: real words that are similar to error
+  * Choose the weighted edit distance, Highest noise channel probability
+
