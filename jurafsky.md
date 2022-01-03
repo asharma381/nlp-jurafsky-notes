@@ -490,3 +490,5 @@ $\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
   * Generate candidates: real words that are similar to error
   * Choose the weighted edit distance, Highest noise channel probability
 
+## Lecture 21 - The Noisy Channel Model of Spelling 
+
