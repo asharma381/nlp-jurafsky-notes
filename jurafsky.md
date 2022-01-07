@@ -491,4 +491,19 @@ $\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
   * Choose the weighted edit distance, Highest noise channel probability
 
 ## Lecture 21 - The Noisy Channel Model of Spelling 
+* Noisy Channel Intuition (original word $\rightarrow$ noise word)
+  * To guess the word, take a set of hypothesis words decode them through the noisy channel, and find the noisy hypothesis word which looks most like the noisy word
+  * $\hat w = \text{argmax}_{w \in V} P(w|x)$
+    $\hat w = \text{argmax}_{w \in V} P(x|w)*P(w)$
+  * Channel error model = likelihood * prior
 
+* Misspelled word: `acress`
+  * Find words with similar spelling (small edit distance to error)
+  * Find words with similar pronunciation (small edit distance of pronunciation to error)
+  * 80% of errors are within edit distance of 1
+  * Also allows insertion of space or hyphen
+
+* Create confusion matrix of spelling errors for substitution of $X$ for $Y$
+  1. Use Noisy Channel
+  2. Language Model (uni-gram or bi-gram)
+* Multiply the two probabilities $k *P_1 * P_2$ by $k$ to normalize
