@@ -507,3 +507,5 @@ $\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
   1. Use Noisy Channel
   2. Language Model (uni-gram or bi-gram)
 * Multiply the two probabilities $k *P_1 * P_2$ by $k$ to normalize
+
+## Lecture 22 - Real Word Spell Correction
