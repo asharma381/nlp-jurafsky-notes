@@ -509,3 +509,27 @@ $\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
 * Multiply the two probabilities $k *P_1 * P_2$ by $k$ to normalize
 
 ## Lecture 22 - Real Word Spell Correction
+* There may be instances where real words in the dictionary have been incorrectly used (ex: `minute` to `minuet`, `by` to `bye`)
+
+* Given a sentence {$w_1, w_2, \ldots, w_n$}
+* Generate a set of candidates for each word $w_i$
+  * Candidate($w_1$) = $w_1, w_1', w_1''$
+* Choose the sequence of candidates $W$ that maximizes $P(W)$
+  * Get probabilities from Language Model {uni-gram, bi-gram}
+  * Channel Model: same as for non-word spelling correction, plus need probability for no error, $P(w|w)$
+
+## Lecture 23 - Spelling Correction and the Noisy Channel
+* Spelling Correction
+  * Very confident: Autocorrect
+  * Less Confident: Give best correction, Give correction list
+  * Not confident: flag as an error
+* State of the Art Noisy Channel
+  * $\hat w = \text{argmax}_{w \in V} P(x|y) P(w)^{\lambda}$
+  * Weight the probability, learn $\lambda$ from a development test set
+* Phonetic Error Model
+  * Metaphone: convert misspelling to metaphone pronunciation
+  * Nearby keys in classical keyboard
+* Classifier-Based Methods
+  * Use many features in a classifier for specific pairs
+  * Ex: `weather, whether` - Check for 'cloudy' appearing within $\pm$10 words, verb after, __ or not
+
