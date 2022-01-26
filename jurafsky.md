@@ -533,3 +533,18 @@ $\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
   * Use many features in a classifier for specific pairs
   * Ex: `weather, whether` - Check for 'cloudy' appearing within $\pm$10 words, verb after, __ or not
 
+## Lecture 24 - What is Text Classification
+* Spam Detection
+  * All the features such as (subject line, links, urgency) can be combined in a classifier to give some evidence
+* Tasks: Authorship Attribution, Male/Female Authorship, Positive/Negative Movie Review, Subject of Article via Categories
+  * Solved using Bayesian Methods
+
+* Text Classification: definition
+  * Input: a document D, fixed set of classes C = {c1, c2, ..., cn}
+  * Output: a predicted class c in C
+* Hand-coded rules: Black-list-address, accuracy can be high, building and maintaining these rules is expensive
+
+* Classification Methods: Supervised Machine Learning
+  * Input: document, set of classes, set m hand-labeled documents (d1,c1), (d2,c2)
+  * Output: a learned classifier y: d -> c
+  * Kinds of classifiers: Naive Bayes, Logistic Regression, Support Vector Machines (SVMs), k-Nearest Neighbors
