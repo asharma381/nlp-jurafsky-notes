@@ -548,3 +548,13 @@ $\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
   * Input: document, set of classes, set m hand-labeled documents (d1,c1), (d2,c2)
   * Output: a learned classifier y: d -> c
   * Kinds of classifiers: Naive Bayes, Logistic Regression, Support Vector Machines (SVMs), k-Nearest Neighbors
+
+## Lecture 25 - Naive Bayes 
+* Naive Bayes Intuition
+  * Simple classification method based on Bayes Rule
+  * Relies on very simple representation of documents (bag of words)
+* The bag of words representation
+  * Build a function gamma, which takes document D and returns a class (positive or negative)
+  * Look at individual words in the document (subset of words) loses the order, take set of words and their counts
+  * Ex: w1 occurs x1 times, w2 occurs x2 times.
+  * Represent document by list of words and their counts
