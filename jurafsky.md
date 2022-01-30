@@ -558,3 +558,19 @@ $\lambda(w_{i-1}) = \frac{d}{c(w_{i-1})} | \{w: c(w_{i-1}, w_i > 0)\}|$
   * Look at individual words in the document (subset of words) loses the order, take set of words and their counts
   * Ex: w1 occurs x1 times, w2 occurs x2 times.
   * Represent document by list of words and their counts
+
+
+## Lecture 26 - Formalizing the Naive Bayes Classifier
+* For a document D and a class C, P(c|d) = P(d|c) * P(c)/P(d)
+* C_map = argmax P(c|d)
+  * argmax P(d|c) * P(c)/P(d)  - Bayes Rule
+  * argmax P(d|c) * P(c) - drop the denominator constant term P(d) is identical
+
+* C_map = argmax P(x1, x2, ..., xn | c) * P(c) - count the relative frequencies in a corpus
+* Bag of words assumption: Assume position doesn't matter (only care about features)
+* Conditional Independence: Assume the feature probabilities P(xi|cj) are independent given the class c
+
+Multinomial Naive Bayes Classifier
+* P(x1, ..., xn | c) = P(x1 | c) * P(x2 | c) * P(x3 | c) * ... *  P(xn | c)
+* C_nb = argmax P(c_j) PI_MULTI_ [P(x|c)]
+* positional <-- all word positions in test document, assign the classes to the document
