@@ -574,3 +574,10 @@ Multinomial Naive Bayes Classifier
 * P(x1, ..., xn | c) = P(x1 | c) * P(x2 | c) * P(x3 | c) * ... *  P(xn | c)
 * C_nb = argmax P(c_j) PI_MULTI_ [P(x|c)]
 * positional <-- all word positions in test document, assign the classes to the document
+
+## Lecture 27 - Naive Bayes Learning
+* Learning the Multinomial Naive Bayes Model
+  * First attempt: maximum likelihood estimates (simply use the frequency in the data)
+  * P(w|c) = count(w, c)/sum(count(w, c))
+  * Laplace add-1 smoothing for Naive Bayes
+* Multinomial Learning
