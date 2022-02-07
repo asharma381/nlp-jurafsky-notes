@@ -581,3 +581,27 @@ Multinomial Naive Bayes Classifier
   * P(w|c) = count(w, c)/sum(count(w, c))
   * Laplace add-1 smoothing for Naive Bayes
 * Multinomial Learning
+
+
+
+## Product Manager
+
+Agenda
+* Look at a Product Manager's life
+* Day to Day activities, Weekly and Biweekly Activities
+
+Daily Meeting
+* Typically first thing in the morning, run through released work
+* Check in or work in progress
+* Give space for DevOps or QA to pair (make sure nothing wrong is happening)
+* Group - customer calls, sales calls
+* Individual - backlog refinement, product ideation
+
+Weekly and Biweekly
+* Agile Meetings: (Inspect and Adapt)
+  * Grooming (going through the cards - developers need to have a say in the ideas)
+  * Retrospective or Retros (process in your weekly life)
+  * Pre-Grooming (team-specific)
+
+Coordination
+* Knowledge Sharing, Team Building, Customer Success Meetings, Product Meetings
