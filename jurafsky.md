@@ -582,6 +582,19 @@ Multinomial Naive Bayes Classifier
   * Laplace add-1 smoothing for Naive Bayes
 * Multinomial Learning
 
+## Lecture 28 - Naive Bayes Relationship to Language Modeling
+* Looking at a class: China
+  * Elements of generative model: Shanghai, and, Shenzhen, issue, bonds
+  * Probability for each word
+* Naive Bayes Classifier can use any sorts of features 
+  * URL, email addresses, dictionaries, network features
+* But, we only use word features and all of the words in the text (not subsets)
+* Naive Bayes has an important similarity to language modeling
+* Each class = unigram language model
+  * Assigning each words: P(word | c)
+  * Assigning each sentence: P(s | c) = prod of P(word | c)
+  * Each class assigns the higher probability to s (positive vs negative)
+
 
 
 ## Product Manager
