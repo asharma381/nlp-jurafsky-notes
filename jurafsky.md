@@ -618,3 +618,32 @@ Weekly and Biweekly
 
 Coordination
 * Knowledge Sharing, Team Building, Customer Success Meetings, Product Meetings
+
+
+### CS 156 Week 7, Lecture 1
+* CRUD = Create, Read, Updated, Delete (Software Engineering Strategy)
+
+Command: `mvn spring-boot:run`
+1. GitHub (status, pull)
+2. mvn spring-boot run (backend)
+3. Frontend `npm start`
+4. Frontend: Storybook (concentrate on frontend components)
+
+User interface is changed based on the role.
+* Not logged in
+* Logged in as user
+* Logged in as admin
+
+SQL = relational database (rows, cols)
+MongoDB = 
+
+Issues -> More Issues -> Add to Kanban Board -> To-Do
+Acceptance Criteria
+`git checkout -b [pc-students-placeholder-menu]`
+`npm run coverage` - Coverage Tests
+`npx stryker run` - Mutation Tests
+
+Axios Mock - simulate the backend
+200 - status OK
+
+`npm tests -- StudentTest` - run one test at a time
