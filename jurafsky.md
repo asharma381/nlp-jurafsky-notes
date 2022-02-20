@@ -595,7 +595,14 @@ Multinomial Naive Bayes Classifier
   * Assigning each sentence: P(s | c) = prod of P(word | c)
   * Each class assigns the higher probability to s (positive vs negative)
 
-
+## Lecture 29 - Multinomial Naive Bayes
+* Summary: Naive Bayes is Not So Naive
+  * Very Fast, low storage, high accuracy
+  * Robust to Irrelevant Features
+    * Irrelevant Features cancel each other without affecting the result
+  * Very good in domains with many equally important features
+    * Decision Trees suffer from fragmentation in such cases - especially if little data
+  * Optimal if the independence assumptions hold: If assumed independence, then it is the Bayes Optimal Classifier for problem
 
 ## Product Manager
 
