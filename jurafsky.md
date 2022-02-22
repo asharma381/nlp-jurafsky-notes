@@ -604,6 +604,33 @@ Multinomial Naive Bayes Classifier
     * Decision Trees suffer from fragmentation in such cases - especially if little data
   * Optimal if the independence assumptions hold: If assumed independence, then it is the Bayes Optimal Classifier for problem
 
+## Lecture 30 - Precision, Recall, and F-Measure
+2-by-2 contingency table
+|   | Correct | Not Correct |
+| ------------- | ------------- | ------------- |
+| Selected  | tp  | fp |
+| Not Selected  | fn  | tn |
+
+* Correct/Not Correct are ground truth
+* Selected/Not Selected are predictions
+
+* Accuracy = (tp + tn) / (tp + tn + fp + fn)
+  * In many applications accuracy is a good measure, however, it is not a good measure when you are dealing with things which are uncommon
+
+* Precision and Recall
+  * Precision: % of selected items that are correct
+    * P = tp / (tp + fp)
+  * Recall: % of correct items that are selected
+    * R = tp / (tp + fn)
+  * Tradeoff: Increasing the precision means decreasing the recall, and vice versa
+
+* F-Measure: A combined measure
+  * Combined measure that assesses the P/R tradeoff.
+  * F-Measure is weighted harmonic mean
+  * F-Measure = 2PR / (P + R)
+
+
+
 ## Product Manager
 
 Agenda
