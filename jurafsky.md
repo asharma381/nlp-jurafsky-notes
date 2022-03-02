@@ -629,6 +629,25 @@ Multinomial Naive Bayes Classifier
   * F-Measure is weighted harmonic mean
   * F-Measure = 2PR / (P + R)
 
+## Lecture 31 - Text Classification Evaluation
+* Multiclass Classifier - 118 categories
+  * Learn 118 binary category distinctions
+  * Confusion Matrix `c`
+    * For each pair of classes <c_1, c_2> how many documents form c1
+  * Calculate precision, recall, accuracy
+
+* Micro vs Macro Averaging
+  * Micro: Compute performance for each class, then take the average
+  * Macro: Collect decisions for all classes, compute contingency table, evaluate
+
+* Cross Validation: Development Test Set
+  * Test performance while we are developing 
+  * Metric P/R/F1 and Accuracy
+  * Unseen test set: avoid overfitting ('tuning to the test set'), more conservative estimate of the performance
+  * Cross-validation over multiple sets
+    * Handle sampling errors from different dataset
+    * Pool result over each split
+    * Compute pooled dev set performance  
 
 
 ## Product Manager
