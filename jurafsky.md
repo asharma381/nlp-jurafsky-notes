@@ -649,6 +649,14 @@ Multinomial Naive Bayes Classifier
     * Pool result over each split
     * Compute pooled dev set performance  
 
+## Lecture 32 - Practical Issues in Text Classification
+* No training data = manually write rules
+* Very little data = use Naive Bayes 'high bias' algorithm
+* Get more labled data = use more features
+* Try semi-supervised learning
+
+* Reasonable amount of data
+
 
 ## Product Manager
 
