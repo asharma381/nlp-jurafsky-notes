@@ -656,6 +656,15 @@ Multinomial Naive Bayes Classifier
 * Try semi-supervised learning
 
 * Reasonable amount of data
+  * Perfect of all clever classifiers: SVM, Logistic Regression, user-interpretable decision trees
+
+* Huge amount of data
+  * Costly: SVMs and KNNs
+  * Naive Bayes comes back again
+
+* Underflow Prevention: Use log space
+  * Multiplying can cause floating-point underflow
+  * Better to use sum of logs, model is now just max of sum of weights
 
 
 ## Product Manager
