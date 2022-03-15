@@ -676,6 +676,25 @@ Multinomial Naive Bayes Classifier
   * More complex - rank the attitude from 1 to 5
   * Advanced - detect the text, source, or complex attitude type
 
+## Lecture 34 - Sentiment Analysis: A Baseline Algorithm
+* Tokenizing, Feature extraction, Classification (Naive Bayes, Max Ent, SVM)
+* Sentiment Tokenizing
+  * Deal with HTML/XML markup
+  * Twitter markup (hashtags, @mentions, links)
+  * Capitalization (preserve for words in all caps)
+  * Phone numbers, dates, emoticons
+* Handle Negations
+  * Add _not_ to the token list (didn't to not)
+* Binary (Boolean Feature) Multinomial Naive Bayes
+  * Binary seems to work better than full word counts
+  * Not the same as Multivariate Bernoulli Naive Bayes
+* Cross-Validation
+  * Break up into 10-fold cross validation
+  * For each fold: choose the fold as a temporary test set, train on 9 folds, compute performance on the test fold
+  * Report average performance of the 10 runs
+* Typically MaxInt and SVM are better than Naive Bayes
+* Thwarted Expectations and Ordering Effect (thought good, but not so good)
+
 ## Product Manager
 
 Agenda
