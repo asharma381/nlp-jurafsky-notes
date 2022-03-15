@@ -666,6 +666,15 @@ Multinomial Naive Bayes Classifier
   * Multiplying can cause floating-point underflow
   * Better to use sum of logs, model is now just max of sum of weights
 
+## Lecture 33 - What is Sentiment Analysis?
+* Positive and Negative Movie Review
+* Product Search: attribute reviews to products
+* Twitter Sentiment Analysis
+* Sentiment Analysis: Detecting attitudes of text
+* Tasks:
+  * Simplest Task - is the attitude of a text positive or negative?
+  * More complex - rank the attitude from 1 to 5
+  * Advanced - detect the text, source, or complex attitude type
 
 ## Product Manager
 
