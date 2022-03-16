@@ -695,6 +695,8 @@ Multinomial Naive Bayes Classifier
 * Typically MaxInt and SVM are better than Naive Bayes
 * Thwarted Expectations and Ordering Effect (thought good, but not so good)
 
+## Lecture 35 - 
+
 ## Product Manager
 
 Agenda
