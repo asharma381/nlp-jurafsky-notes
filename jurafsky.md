@@ -695,7 +695,15 @@ Multinomial Naive Bayes Classifier
 * Typically MaxInt and SVM are better than Naive Bayes
 * Thwarted Expectations and Ordering Effect (thought good, but not so good)
 
-## Lecture 35 - 
+## Lecture 35 - Sentiment Analysis
+* Inquirer: Positive and Negative List of words
+* Strong vs Weak, Pleasure vs Pain
+* LIWC (Lingustic Inquiry and Word Count) - 70 classes
+* Word gets label for pos, neg, objective
+* Polarity Lexicons
+* Count "bad" in 1-star, 2-star, 3-star reviews
+  * Analyze polarity, occurs more often in 10/10 than 2/10
+  * Logical Negation = no, not, never, occur in low and high start reviews
 
 ## Product Manager
 
