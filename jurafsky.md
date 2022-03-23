@@ -705,6 +705,20 @@ Multinomial Naive Bayes Classifier
   * Analyze polarity, occurs more often in 10/10 than 2/10
   * Logical Negation = no, not, never, occur in low and high start reviews
 
+## Lecture 36 - Learning Sentiment Lexicons
+* Use small amount of information (few labeled examples, hand-built patterns)
+* words conjoined with [and] have same polarity
+* words conjoined with [but] have opposite polarity
+* Turney Algorithm
+  * Extract a phrasal lexicon from reviews
+  * Learn polarity of each phrase
+  * Rate a review by the average polarity of its phrases
+  * Learn domain specific information
+* PMI - Pointwise mutual information
+  * I(X,Y) = Sum_x Sum_y P(x,y) log(P(x,y)/P(x)P(y))
+* PPMI - Max(0, PMI)
+* WordNet to learn polarity of words
+
 ## Product Manager
 
 Agenda
